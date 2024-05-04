@@ -30,16 +30,16 @@ describe("SelectDrawer", () => {
 
     //
 
-    jest.spyOn(select, "get").mockImplementationOnce(() => "opt 1");
+    jest.spyOn(select, "get").mockImplementationOnce(() => "opt 2");
 
     const selectPrinter2 = new SelectDrawer(select, drawer);
 
     expect(selectPrinter2.draw()).toBe(
-      drawer.compose({
-        text: "opt 1",
+      "opt 1\n" + drawer.compose({
+        text: "opt 2",
         color: "primary",
         applyIn: "bg",
-      }) + "\nopt 2\nopt 3",
+      }) + "\nopt 3",
     );
   });
 });
