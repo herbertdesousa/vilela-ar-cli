@@ -1,0 +1,17 @@
+╔══ {title} ═════════════════════╗ ╔══ Camadas (Alt) ════╗
+║  Tipo: Recibo                  ║ ║  Cabeçalho          ║
+║  Data: 00/00/0000              ║ ║  *Add Bloco*        ║
+║  Endereço: xx                  ║ ║  Pagamento          ║
+║  CPF/CNPJ:                     ║ ║                     ║                
+║                                ║ ║                     ║
+║                                ║ ║                     ║
+║                                ║ ║                     ║
+║                                ║ ║  Opções             ║
+╚════════════════════════════════╝ ╚═════════════════════╝
+╔══ Dicas ═══════════════════════╗ ╔══  ═════════════════╗
+║  lorem ipsum dolot et          ║ ║                     ║
+║  ipsum lorem et dolot          ║ ║                     ║
+║  lorem ipsum dolot et          ║ ║                     ║
+╚════════════════════════════════╝ ╚═════════════════════╝
+
+
