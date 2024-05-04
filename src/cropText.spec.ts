@@ -2,7 +2,7 @@ import { Drawer } from "./Drawer";
 import { Select } from "./Select";
 import { SelectDrawer } from "./SelectDrawer";
 
-describe("SelectDrawer", () => {
+describe("cropText", () => {
   it("should be able to draw simple", () => {
     const select = new Select(["opt 1", "opt 2", "opt 3"]);
     const drawer = new Drawer();
