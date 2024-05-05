@@ -1,5 +1,5 @@
-import { Select } from "./Select";
-import { cropText } from "./cropText";
+import { Select } from "../components/Select";
+import { cropText } from "../utils/cropText";
 
 interface SelectPrintStyle {
   paddingLeft?: number;

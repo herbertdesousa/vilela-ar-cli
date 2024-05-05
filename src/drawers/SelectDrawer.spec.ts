@@ -1,4 +1,4 @@
-import { Select } from "./Select";
+import { Select } from "../components/Select";
 import { SelectDrawer } from "./SelectDrawer";
 
 describe("SelectDrawer", () => {

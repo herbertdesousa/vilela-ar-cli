@@ -1,8 +1,8 @@
 import Readline from "readline";
 
-import { FrameDrawer } from "./FrameDrawer";
-import { Select } from "./Select";
-import { SelectDrawer } from "./SelectDrawer";
+import { FrameDrawer } from "./drawers/FrameDrawer";
+import { Select } from "./components/Select";
+import { SelectDrawer } from "./drawers/SelectDrawer";
 
 /* import * as argv from 'yargs';
 

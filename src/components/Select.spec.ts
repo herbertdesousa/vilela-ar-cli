@@ -1,4 +1,4 @@
-import { Select } from "./Select";
+import { Select } from "./components/Select";
 
 describe("Select", () => {
   it("should be able to move up or down selection", () => {
