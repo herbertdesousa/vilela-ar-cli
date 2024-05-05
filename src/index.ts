@@ -1,9 +1,8 @@
-import prompts from "prompts";
 import Readline from "readline";
 
+import { FrameDrawer } from "./FrameDrawer";
 import { Select } from "./Select";
 import { SelectDrawer } from "./SelectDrawer";
-import { Drawer } from "./Drawer";
 
 /* import * as argv from 'yargs';
 
@@ -28,18 +27,30 @@ Readline.createInterface({
 
 process.stdin.setEncoding("utf8");
 
-const select = new Select(["opt 1", "opt 2", "opt 3"]);
-const drawer = new Drawer();
+const select = new Select([
+  "Tipo: Recibo",
+  "Data: 00/00/0000",
+  "Endereço: Rua Carlos Alberto Luiz - Vila Medeiros - São Paulo - SP",
+  "CNPJ: 00.000.000/0001-00",
+]);
 
-const selectPrinter = new SelectDrawer(select, drawer, {
+const headerFrame = new FrameDrawer({
+  width: 35,
+  height: 10,
+  title: "Cabeçalho",
+});
+
+const selectPrinter = new SelectDrawer(select, {
   paddingLeft: 1,
-  width: 25,
-}); 
+  width: 30,
+});
 
 function render() {
   console.clear();
 
-  console.log(selectPrinter.draw());
+  headerFrame.draw(selectPrinter.draw()).forEach(row => {
+    console.log(row);
+  })
 }
 
 render();
