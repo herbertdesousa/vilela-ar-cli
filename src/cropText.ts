@@ -1,16 +1,20 @@
 import { generateSpaces } from "./generateSpaces";
 
 interface Options {
+  text: string;
+  moreSymbol: string;
   paddingLeft: number;
   paddingRight: number;
   width: number;
 }
 
-export function cropText(
-  text: string,
-  moreSymbol: string,
-  { paddingLeft, paddingRight, width }: Options,
-): string {
+export function cropText({
+  text,
+  moreSymbol,
+  paddingLeft,
+  paddingRight,
+  width,
+}: Options): string {
   let line = text;
 
   // width:   x   (1 length)
@@ -32,12 +36,12 @@ export function cropText(
   const isCrossingWidth = diffLineWidth > 0;
 
   if (isCrossingWidth) {
-    const moreSymbolMaxWidth = width - paddingLeft;
+    const textMaxWidth = width - paddingLeft;
 
     // ... -> width = 1 -> .
     // ... -> width = 2 -> ..
     // ... -> width = 5 -> ...
-    const currentMoreSymbol = moreSymbol.slice(0, moreSymbolMaxWidth);
+    const currentMoreSymbol = moreSymbol.slice(0, textMaxWidth);
 
     // more symbol: ...  (3 length) -> adjusted symbol = .. (2 length)
     // width:  a b c     (3 length)
@@ -45,7 +49,7 @@ export function cropText(
     // result: a b c . . (5 length)
     line = line.slice(0, width - currentMoreSymbol.length);
 
-    return currentMoreSymbol;
+    return line + currentMoreSymbol;
   }
 
   return line;
