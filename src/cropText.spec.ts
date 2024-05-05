@@ -6,7 +6,6 @@ describe("cropText", () => {
       text: "opt 1",
       moreSymbol: "...",
       paddingLeft: 1,
-      paddingRight: 1,
       width: 10,
     });
 
@@ -18,7 +17,6 @@ describe("cropText", () => {
       text: "opt prime",
       moreSymbol: "...",
       paddingLeft: 1,
-      paddingRight: 1,
       width: 10,
     });
 
@@ -30,7 +28,6 @@ describe("cropText", () => {
       text: "opt prime",
       moreSymbol: "...",
       paddingLeft: 0,
-      paddingRight: 0,
       width: 5,
     });
 
@@ -42,7 +39,6 @@ describe("cropText", () => {
       text: "opt prime",
       moreSymbol: "...",
       paddingLeft: 2,
-      paddingRight: 2,
       width: 5,
     });
 
@@ -54,7 +50,6 @@ describe("cropText", () => {
       text: "opt prime",
       moreSymbol: "...",
       paddingLeft: 2,
-      paddingRight: 2,
       width: 3,
     });
 
@@ -66,7 +61,6 @@ describe("cropText", () => {
       text: "opt prime",
       moreSymbol: "...",
       paddingLeft: 2,
-      paddingRight: 2,
       width: 2,
     });
 
@@ -78,7 +72,6 @@ describe("cropText", () => {
       text: " ",
       moreSymbol: "...",
       paddingLeft: 2,
-      paddingRight: 2,
       width: 1,
     });
 

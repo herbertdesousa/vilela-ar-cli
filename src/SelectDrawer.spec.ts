@@ -11,7 +11,6 @@ describe("SelectDrawer", () => {
 
     const selectPrinter = new SelectDrawer(select, drawer, {
       paddingLeft: 1,
-      paddingRight: 1,
       width: 10,
     });
 

@@ -33,7 +33,6 @@ const drawer = new Drawer();
 
 const selectPrinter = new SelectDrawer(select, drawer, {
   paddingLeft: 1,
-  paddingRight: 1,
   width: 25,
 }); 
 

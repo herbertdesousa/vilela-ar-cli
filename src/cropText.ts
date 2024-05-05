@@ -4,7 +4,6 @@ interface Options {
   text: string;
   moreSymbol: string;
   paddingLeft: number;
-  paddingRight: number;
   width: number;
 }
 
@@ -12,7 +11,6 @@ export function cropText({
   text,
   moreSymbol,
   paddingLeft,
-  paddingRight,
   width,
 }: Options): string {
   let line = text;

@@ -4,7 +4,6 @@ import { cropText } from "./cropText";
 
 interface SelectPrintStyle {
   paddingLeft?: number;
-  paddingRight?: number;
   width: number;
 }
 
@@ -18,7 +17,7 @@ export class SelectDrawer {
     private drawer: Drawer,
     style: SelectPrintStyle
   ) {
-    this.style = { paddingLeft: 0, paddingRight: 0, ...style };
+    this.style = { paddingLeft: 0, ...style };
   }
 
   draw(): string[] {
@@ -29,7 +28,6 @@ export class SelectDrawer {
         text: option,
         moreSymbol: this.moreSymbol,
         paddingLeft: this.style.paddingLeft,
-        paddingRight: this.style.paddingRight,
         width: this.style.width,
       });
 
