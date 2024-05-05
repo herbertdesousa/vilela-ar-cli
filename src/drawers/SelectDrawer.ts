@@ -22,10 +22,10 @@ export class SelectDrawer {
     const selectedOption = this.select.get();
 
     const lines = this.select.all().map((option) => {
-      const isSelected = option === selectedOption;
+      const isSelected = option.key === selectedOption.key;
 
       return cropText({
-        text: isSelected ? `> ${option}` : option,
+        text: isSelected ? `> ${option.label}` : option.label,
         moreSymbol: this.moreSymbol,
         paddingLeft: this.style.paddingLeft,
         width: this.style.width,

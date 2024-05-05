@@ -1,19 +1,21 @@
+import { SelectItem } from "./SelectItem";
+
 export class Select {
   private optionIndex = 0;
 
-  constructor(private options: string[]) {
+  constructor(private options: SelectItem[]) {
     if (options.length === 0) throw new Error("Options Empty");
   }
 
-  all(): string[] {
+  all(): SelectItem[] {
     return this.options;
   }
 
-  get() {
+  get(): SelectItem {
     return this.options[this.optionIndex];
   }
 
-  up() {
+  up(): void {
     const nextOptionIndex = this.optionIndex - 1;
     const optionAbove = this.options[nextOptionIndex];
 
@@ -22,7 +24,7 @@ export class Select {
     this.optionIndex = nextOptionIndex;
   }
 
-  down() {
+  down(): void {
     const previousOptionIndex = this.optionIndex + 1;
     const optionBelow = this.options[previousOptionIndex];
 

@@ -3,6 +3,7 @@ import Readline from "readline";
 import { FrameDrawer } from "./drawers/FrameDrawer";
 import { Select } from "./components/Select";
 import { SelectDrawer } from "./drawers/SelectDrawer";
+import { SelectItem } from "./components/SelectItem";
 
 /* import * as argv from 'yargs';
 
@@ -45,10 +46,10 @@ const tipsFrame = new FrameDrawer({
 });
 
 const select = new Select([
-  "Tipo: Recibo",
-  "Data: 00/00/0000",
-  "Endereço: Rua Carlos Alberto Luiz - Vila Medeiros - São Paulo - SP",
-  "CNPJ: 00.000.000/0001-00",
+  new SelectItem("type", "Tipo: Recibo", () => {}),
+  new SelectItem("date", "Data: 00/00/0000", () => {}),
+  new SelectItem("address", "Endereço: Rua Carlos Alberto Luiz - Vila Medeiros - São Paulo - SP", () => {}),
+  new SelectItem("document", "CNPJ: 00.000.000/0001-00", () => {}),
 ]);
 const headerSelect = new SelectDrawer(select, {
   paddingLeft: 1,
