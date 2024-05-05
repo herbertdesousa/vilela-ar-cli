@@ -27,20 +27,30 @@ Readline.createInterface({
 
 process.stdin.setEncoding("utf8");
 
-const select = new Select([
-  "Tipo: Recibo",
-  "Data: 00/00/0000",
-  "Endereço: Rua Carlos Alberto Luiz - Vila Medeiros - São Paulo - SP",
-  "CNPJ: 00.000.000/0001-00",
-]);
 
 const headerFrame = new FrameDrawer({
   width: 35,
   height: 10,
   title: "Cabeçalho",
 });
+const layersFrame = new FrameDrawer({
+  width: 25,
+  height: 10,
+  title: "Camadas (Alt)",
+});
+const tipsFrame = new FrameDrawer({
+  width: 35,
+  height: 3,
+  title: "Dicas",
+});
 
-const selectPrinter = new SelectDrawer(select, {
+const select = new Select([
+  "Tipo: Recibo",
+  "Data: 00/00/0000",
+  "Endereço: Rua Carlos Alberto Luiz - Vila Medeiros - São Paulo - SP",
+  "CNPJ: 00.000.000/0001-00",
+]);
+const headerSelect = new SelectDrawer(select, {
   paddingLeft: 1,
   width: 30,
 });
@@ -48,9 +58,17 @@ const selectPrinter = new SelectDrawer(select, {
 function render() {
   console.clear();
 
-  headerFrame.draw(selectPrinter.draw()).forEach(row => {
-    console.log(row);
-  })
+  const drawedLayers = layersFrame.draw(['Cabeçalho', '* Add Bloco', 'Pagamento'])
+
+  headerFrame.draw(headerSelect.draw()).forEach((row, rowIndex) => {
+    console.log(row + drawedLayers[rowIndex]);
+  });
+
+  tipsFrame.draw([
+    'lorem ipsum dolot et',
+    'ipsum lorem et dolot',
+    'lorem ipsum dolot et',
+  ]).forEach(row => console.log(row));
 }
 
 render();
